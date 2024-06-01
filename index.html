@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="quiz-container">
+<div class="menu-container" id="menu-container">
+    <h1>Choose a Quiz Topic</h1>
+    <button class="menu-button" onclick="selectTopic('general')">General Knowledge</button>
+    <button class="menu-button" onclick="selectTopic('history')">History</button>
+    <button class="menu-button" onclick="selectTopic('science')">Science</button>
+</div>
+<div class="quiz-container" id="quiz-container" style="display: none;">
+    <button id="back-button" class="back-button" onclick="goToMenu()">&#8592; Back</button>
     <div id="question" class="question"></div>
     <img id="question-image" class="question-image" src="" alt="">
     <div id="answer-buttons" class="answer-buttons"></div>
