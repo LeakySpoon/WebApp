@@ -4,16 +4,23 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f7f7f7;
     margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
 }
 
 .quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: 600px;
-    text-align: center;
+    height: 100%;
     padding: 20px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .btn {
@@ -24,14 +31,13 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    margin: 10px 0;
     width: 100%;
     box-sizing: border-box;
 }
 
-.btn:hover {
-    background-color: #0056b3;
-}
+/*.btn:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
 
 .hide {
     display: none;
@@ -41,16 +47,23 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 }
 
 #image-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px 0;
+    width: 100%;
 }
 
 #image-container img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 5px;
+    object-fit: contain;
 }
 
 .correct {

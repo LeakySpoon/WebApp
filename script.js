@@ -70,7 +70,231 @@ const questions = [
             { text: 'Период изгнания', correct: true }
         ]
     },
-    // Add more questions as needed
+    {
+        image: '8.png',
+        answers: [
+            { text: 'Выделение плаценты по Абуладзе', correct: false },
+            { text: 'Выделение плаценты по Креде-Лазаревичу', correct: false },
+            { text: 'Выделение плаценты по Гентеру', correct: false },
+            { text: 'Ручное отделение плаценты', correct: true }
+        ]
+    },
+    {
+        image: '9.png',
+        answers: [
+            { text: 'Выделение плаценты по Абуладзе', correct: true },
+            { text: 'Выделение плаценты по Креде-Лазаревичу', correct: false },
+            { text: 'Выделение плаценты по Гентеру', correct: false },
+            { text: 'Ручное отделение плаценты', correct: false }
+        ]
+    },
+    {
+        image: '10.png',
+        answers: [
+            { text: 'Выделение плаценты по Абуладзе', correct: false },
+            { text: 'Выделение плаценты по Креде-Лазаревичу', correct: true },
+            { text: 'Выделение плаценты по Гентеру', correct: false },
+            { text: 'Ручное отделение плаценты', correct: false }
+        ]
+    },
+    {
+        image: '11.png',
+        answers: [
+            { text: 'Выделение плаценты по Абуладзе', correct: false },
+            { text: 'Выделение плаценты по Креде-Лазаревичу', correct: false },
+            { text: 'Выделение плаценты по Гентеру', correct: true },
+            { text: 'Ручное отделение плаценты', correct: false }
+        ]
+    },
+    {
+        image: '12.png',
+        answers: [
+            { text: 'Признак Чукалова-Кюстнера', correct: false },
+            { text: 'Признак Шредера', correct: false },
+            { text: 'Наружно-внутренний массаж матки', correct: true },
+            { text: 'Признак Альфельда', correct: false }
+        ]
+    },
+    {
+        image: '13.png',
+        answers: [
+            { text: 'Признак Чукалова-Кюстнера', correct: true },
+            { text: 'Признак Шредера', correct: false },
+            { text: 'Наружно-внутренний массаж матки', correct: false },
+            { text: 'Признак Альфельда', correct: false }
+        ]
+    },
+    {
+        image: '14.png',
+        answers: [
+            { text: 'Полное ножное предлежание', correct: true },
+            { text: 'Чисто ягодичное предлежание', correct: false },
+            { text: 'Затылочное предлежание', correct: false },
+            { text: 'Неполное ножное предлежание', correct: false }
+        ]
+    },
+    {
+        image: '15.png',
+        answers: [
+            { text: 'Чисто ягодичное предлежание', correct: true },
+            { text: 'Полное ножное предлежание', correct: false },
+            { text: 'Затылочное предлежание', correct: false },
+            { text: 'Неполное ножное предлежание', correct: false }
+        ]
+    },
+    {
+        image: '16.png',
+        answers: [
+            { text: 'Затылочное предлежание', correct: true },
+            { text: 'Чисто ягодичное предлежание', correct: false },
+            { text: 'Полное ножное предлежание', correct: false },
+            { text: 'Неполное ножное предлежание', correct: false }
+        ]
+    },
+    {
+        image: '17.png',
+        answers: [
+            { text: 'Неполное ножное предлежание', correct: true },
+            { text: 'Затылочное предлежание', correct: false },
+            { text: 'Чисто ягодичное предлежание', correct: false },
+            { text: 'Полное ножное предлежание', correct: false }
+        ]
+    },
+    {
+        image: '18.png',
+        answers: [
+            { text: 'Лицевое предлежание', correct: true },
+            { text: 'Затылочное предлежание', correct: false },
+            { text: 'Клинически узкий таз', correct: false },
+            { text: 'Анатомически узкий таз', correct: false }
+        ]
+    },
+    {
+        image: '19.png',
+        answers: [
+            { text: 'Коллизия', correct: true },
+            { text: 'Сиамские близнецы', correct: false },
+            { text: 'Декапитация', correct: false },
+            { text: 'Денацификация', correct: false }
+        ]
+    },
+    {
+        image: '20.png',
+        answers: [
+            { text: 'Декапитация', correct: true },
+            { text: 'Демилитаризация', correct: false },
+            { text: 'Денацификация', correct: false },
+            { text: 'Коллизия', correct: false }
+        ]
+    },
+    {
+        image: '21.png',
+        answers: [
+            { text: 'Поворот на ножку', correct: true },
+            { text: 'Массаж матки на кулаке', correct: false },
+            { text: 'Массаж матки на плоде', correct: false },
+            { text: 'Пособие по Цовьянову', correct: false }
+        ]
+    },
+    {
+        image: '22.png',
+        answers: [
+            { text: 'Пособие по Цовьянову', correct: true },
+            { text: 'Массаж матки на кулаке', correct: false },
+            { text: 'Массаж матки на плоде', correct: false },
+            { text: 'Экстракция за паховый сгиб', correct: false }
+        ]
+    },
+    {
+        image: '23.png',
+        answers: [
+            { text: 'Экстракция за паховый сгиб', correct: true },
+            { text: 'Массаж матки на кулаке', correct: false },
+            { text: 'Массаж матки на плоде', correct: false },
+            { text: 'Поворот на ножку', correct: false }
+        ]
+    },
+    {
+        image: '24.png',
+        answers: [
+            { text: 'Измерение диагональной конъюгаты', correct: true },
+            { text: 'Измерение истинной конъюгаты', correct: false },
+            { text: 'Измерение индекса Соловьева', correct: false },
+            { text: 'Измерение наружной конъюгаты', correct: false }
+        ]
+    },
+    {
+        image: '25.png',
+        answers: [
+            { text: 'Классическое ручное пособие', correct: true },
+            { text: 'Экстракция за паховый сгиб', correct: false },
+            { text: 'Аборт нахуй', correct: false },
+            { text: 'Поворот на ножку', correct: false }
+        ]
+    },
+    {
+        image: '26.png',
+        answers: [
+            { text: 'Срединнолатеральная эпизиотомия', correct: true },
+            { text: 'Перинеотомия', correct: false },
+            { text: 'Декапитация (отрежут голову)', correct: false },
+            { text: 'Экстирпация ануса', correct: false }
+        ]
+    },
+    {
+        image: '27.png',
+        answers: [
+            { text: 'Головка над входом', correct: true },
+            { text: 'Головка прижата ко входу', correct: false },
+            { text: 'Головка малым сегментом во входе', correct: false },
+            { text: 'Головка большим сегментом во входе', correct: false }
+        ]
+    },
+    {
+        image: '28.png',
+        answers: [
+            { text: 'Головка прижата ко входу', correct: true },
+            { text: 'Головка в полости малого таза', correct: false },
+            { text: 'Головка малым сегментом во входе', correct: false },
+            { text: 'Головка большим сегментом во входе', correct: false }
+        ]
+    },
+    {
+        image: '29.png',
+        answers: [
+            { text: 'Головка малым сегментом во входе', correct: true },
+            { text: 'Головка большим сегментом во входе', correct: false },
+            { text: 'Головка в полости малого таза', correct: false },
+            { text: 'Головка на тазовом дне', correct: false }
+        ]
+    },
+    {
+        image: '30.png',
+        answers: [
+            { text: 'Головка малым сегментом во входе', correct: false },
+            { text: 'Головка большим сегментом во входе', correct: true },
+            { text: 'Головка в полости малого таза', correct: false },
+            { text: 'Головка на тазовом дне', correct: false }
+        ]
+    },
+    {
+        image: '31.png',
+        answers: [
+            { text: 'Головка малым сегментом во входе', correct: false },
+            { text: 'Головка большим сегментом во входе', correct: false },
+            { text: 'Головка в полости малого таза', correct: true },
+            { text: 'Головка на тазовом дне', correct: false }
+        ]
+    },
+    {
+        image: '32.png',
+        answers: [
+            { text: 'Головка малым сегментом во входе', correct: false },
+            { text: 'Головка большим сегментом во входе', correct: false },
+            { text: 'Головка в полости малого таза', correct: false },
+            { text: 'Головка на тазовом дне', correct: true }
+        ]
+    },
 ];
 
 startButton.addEventListener('click', startGame);
