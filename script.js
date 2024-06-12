@@ -1,151 +1,145 @@
-const questions = {
-    general: [
-        {
-            question: "What is the capital of France?",
-            answers: ["Berlin", "Madrid", "Paris", "Lisbon"],
-            correct: 2,
-            explanation: "Paris is the capital and most populous city of France."
-        },
-        {
-            image: "path/to/image.jpg",
-            answers: ["Option 1", "Option 2", "Option 3", "Option 4"],
-            correct: 1,
-            explanation: "This image depicts [explanation related to the image]."
-        },
-        {
-            question: "Who wrote 'To Be, or Not To Be'?",
-            answers: ["Shakespeare", "Hemingway", "Tolkien", "Rowling"],
-            correct: 0,
-            explanation: "This famous line is from 'Hamlet' by William Shakespeare."
-        }
-    ],
-    history: [
-        {
-            question: "Who was the first president of the United States?",
-            answers: ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
-            correct: 0,
-            explanation: "George Washington was the first president of the United States."
-        },
-        {
-            question: "In what year did World War II end?",
-            answers: ["1942", "1945", "1948", "1950"],
-            correct: 1,
-            explanation: "World War II ended in 1945."
-        }
-    ],
-    science: [
-        {
-            question: "What is the chemical symbol for water?",
-            answers: ["O2", "H2O", "CO2", "HO"],
-            correct: 1,
-            explanation: "The chemical symbol for water is H2O."
-        },
-        {
-            question: "What planet is known as the Red Planet?",
-            answers: ["Earth", "Mars", "Jupiter", "Venus"],
-            correct: 1,
-            explanation: "Mars is known as the Red Planet due to its reddish appearance."
-        }
-    ]
-};
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const questionContainerElement = document.getElementById('question-container');
+const imageContainerElement = document.getElementById('image-container');
+const answerButtonsElement = document.getElementById('answer-buttons');
 
-let currentQuestionIndex = 0;
-let shuffledQuestions = [];
-let selectedTopic = 'general';
+let shuffledQuestions, currentQuestionIndex;
 
-function selectTopic(topic) {
-    selectedTopic = topic;
-    startGame();
-}
+const questions = [
+    {
+        image: '1.png',
+        answers: [
+            { text: 'Ромб Михаэлиса', correct: true },
+            { text: 'Плоскорахитический таз', correct: false },
+            { text: 'Жопа? хз', correct: false },
+            { text: 'Поперечносуженный таз', correct: false }
+        ]
+    },
+    {
+        image: '2.png',
+        answers: [
+            { text: 'Метод Леопольда', correct: false },
+            { text: 'Метод Морисо-Левре-Лашапелль', correct: true },
+            { text: 'Метод Абуладзе', correct: false },
+            { text: 'Метод Креде-Лазаревича', correct: false }
+        ]
+    },
+    {
+        image: '3.png',
+        answers: [
+            { text: 'Первый прием Леопольда', correct: false },
+            { text: 'Второй прием Леопольда', correct: true },
+            { text: 'Третий прием Леопольда', correct: false },
+            { text: 'Четвертый прием Леопольда', correct: false }
+        ]
+    },
+    {
+        image: '4.png',
+        answers: [
+            { text: 'Первый прием Леопольда', correct: true },
+            { text: 'Второй прием Леопольда', correct: false },
+            { text: 'Третий прием Леопольда', correct: false },
+            { text: 'Четвертый прием Леопольда', correct: false }
+        ]
+    },
+    {
+        image: '5.png',
+        answers: [
+            { text: 'Первый прием Леопольда', correct: false },
+            { text: 'Второй прием Леопольда', correct: false },
+            { text: 'Третий прием Леопольда', correct: true },
+            { text: 'Четвертый прием Леопольда', correct: false }
+        ]
+    },
+    {
+        image: '6.png',
+        answers: [
+            { text: 'Первый прием Леопольда', correct: false },
+            { text: 'Второй прием Леопольда', correct: false },
+            { text: 'Третий прием Леопольда', correct: false },
+            { text: 'Четвертый прием Леопольда', correct: true }
+        ]
+    },
+    {
+        image: '7.png',
+        answers: [
+            { text: 'Разрыв промежности', correct: false },
+            { text: 'Перинеотомия', correct: false },
+            { text: 'Период раскрытия', correct: false },
+            { text: 'Период изгнания', correct: true }
+        ]
+    },
+    // Add more questions as needed
+];
+
+startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex >= shuffledQuestions.length) {
+        shuffleQuestions();
+        currentQuestionIndex = 0;
+    }
+    setNextQuestion();
+});
 
 function startGame() {
-    const menuContainer = document.getElementById('menu-container');
-    const quizContainer = document.getElementById('quiz-container');
-
-    menuContainer.style.display = 'none';
-    quizContainer.style.display = 'block';
-    document.getElementById('back-button').style.display = 'block';
-    shuffledQuestions = shuffleArray(questions[selectedTopic]);
+    startButton.classList.add('hide');
+    shuffleQuestions();
     currentQuestionIndex = 0;
+    questionContainerElement.classList.remove('hide');
+    setNextQuestion();
+}
+
+function shuffleQuestions() {
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+}
+
+function setNextQuestion() {
+    resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
-function goToMenu() {
-    const menuContainer = document.getElementById('menu-container');
-    const quizContainer = document.getElementById('quiz-container');
-
-    menuContainer.style.display = 'block';
-    quizContainer.style.display = 'none';
-}
-
 function showQuestion(question) {
-    const questionElement = document.getElementById('question');
-    const questionImageElement = document.getElementById('question-image');
-    const answerButtonsElement = document.getElementById('answer-buttons');
-    const explanationElement = document.getElementById('explanation');
-    const nextButton = document.getElementById('next-button');
+    const img = document.createElement('img');
+    img.src = question.image;
+    img.alt = 'Quiz Image';
+    imageContainerElement.appendChild(img);
 
-    explanationElement.style.display = 'none';
-    nextButton.style.display = 'none';
-
-    if (question.question) {
-        questionElement.innerText = question.question;
-        questionElement.style.display = 'block';
-        questionImageElement.style.display = 'none';
-    } else if (question.image) {
-        questionImageElement.src = question.image;
-        questionElement.style.display = 'none';
-        questionImageElement.style.display = 'block';
-    }
-
-    answerButtonsElement.innerHTML = '';
-
-    const shuffledAnswers = shuffleAnswers(question.answers, question.correct);
-
-    shuffledAnswers.answers.forEach((answer, index) => {
+    question.answers.sort(() => Math.random() - 0.5);
+    question.answers.forEach(answer => {
         const button = document.createElement('button');
-        button.innerText = answer;
-        button.addEventListener('click', () => selectAnswer(index, shuffledAnswers.correct, question.explanation));
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        button.addEventListener('click', () => selectAnswer(button, answer));
         answerButtonsElement.appendChild(button);
     });
 }
 
-function selectAnswer(selectedIndex, correctIndex, explanation) {
-    const explanationElement = document.getElementById('explanation');
-    const nextButton = document.getElementById('next-button');
+function resetState() {
+    nextButton.classList.add('hide');
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
+    while (imageContainerElement.firstChild) {
+        imageContainerElement.removeChild(imageContainerElement.firstChild);
+    }
+}
 
-    if (selectedIndex === correctIndex) {
-        nextQuestion();
+function selectAnswer(button, answer) {
+    if (answer.correct) {
+        button.classList.add('correct');
     } else {
-        explanationElement.innerText = explanation;
-        explanationElement.style.display = 'block';
-        nextButton.style.display = 'block';
+        button.classList.add('wrong');
     }
+    Array.from(answerButtonsElement.children).forEach(btn => {
+        btn.disabled = true;
+        const correctAnswer = shuffledQuestions[currentQuestionIndex].answers.find(ans => ans.correct);
+        if (btn.innerText === correctAnswer.text) {
+            btn.classList.add('correct');
+        } else if (!answer.correct && btn !== button) {
+            btn.classList.add('wrong');
+        }
+    });
+    nextButton.classList.remove('hide');
 }
-
-function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex >= shuffledQuestions.length) {
-        shuffledQuestions = shuffleArray(questions[selectedTopic]);
-        currentQuestionIndex = 0;
-    }
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-}
-
-function shuffleAnswers(answers, correctIndex) {
-    const answersWithIndex = answers.map((answer, index) => ({ answer, index }));
-    const shuffled = answersWithIndex.sort(() => Math.random() - 0.5);
-
-    const newCorrectIndex = shuffled.findIndex(item => item.index === correctIndex);
-    const shuffledAnswers = shuffled.map(item => item.answer);
-
-    return { answers: shuffledAnswers, correct: newCorrectIndex };
-}
-
-function shuffleArray(array) {
-    return array.sort(() => Math.random() - 0.5);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Initial setup or any additional startup code
-});
