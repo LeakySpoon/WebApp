@@ -39,6 +39,25 @@ body {
 /*    background-color: #0056b3;*/
 /*}*/
 
+.hint-btn {
+    background-color: #ffa500;
+}
+
+.hint-btn:hover {
+    background-color: #cc8400;
+}
+
+.back-btn {
+    background-color: #888;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/*.back-btn:hover {*/
+/*    background-color: #555;*/
+/*}*/
+
 .hide {
     display: none;
 }
@@ -72,6 +91,32 @@ body {
 
 .wrong {
     background-color: red;
+}
+
+#hint-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#hint-container.show {
+    display: flex
+}
+
+
+#hint-text {
+    margin-top: 50px;
+    text-align: center;
 }
 
 @media (min-width: 600px) {
