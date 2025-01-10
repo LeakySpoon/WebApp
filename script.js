@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const questions = [
         {
-            image: '1.png',
+            image: '1.jpg',
             answers: [
                 { text: 'Перелом Галеацци', correct: true },
                 { text: 'Перелом Монтеджи', correct: false },
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hint : 'Комбинированное повреждение, характеризующееся переломом лучевой кости в нижней трети с присоединением вывиха головки локтевой кости.\n'
         },
         {
-            image: '2.png',
+            image: '2.jpg',
             answers: [
                 { text: 'Перелом Коллеса', correct: false },
                 { text: 'Перелом Смита', correct: true },
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hint : 'Сгибательный перелом лучевой кости'
         },
         {
-            image: '3.png',
+            image: '3.jpg',
             answers: [
                 { text: 'Перелом Смита', correct: false },
                 { text: 'Перелом Коллеса', correct: true },
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hint : 'Разгибательный перелом лучевой кости'
         },
         {
-            image: '4.png',
+            image: '4.jpg',
             answers: [
                 { text: 'Перелом Хатчинсона (Гетчинсона)', correct: true },
                 { text: 'Перелом Латенера', correct: false },
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hint : 'Изолированный перелом шиловидного отростка лучевой кости'
         },
         {
-            image: '5.png',
+            image: '5.jpg',
             answers: [
                 { text: 'Перелом', correct: false },
                 { text: 'Перелом', correct: false },
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hint : ''
         },
         {
-            image: '6.png',
+            image: '6.jpg',
             answers: [
                 { text: 'Перелом', correct: false },
                 { text: 'Перелом', correct: false },
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hint : ''
         },
         {
-            image: '7.png',
+            image: '7.jpg',
             answers: [
                 { text: 'Перелом', correct: false },
                 { text: 'Перелом', correct: false },
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hint : ''
         },
         {
-            image: '8.png',
+            image: '8.jpg',
             answers: [
                 { text: 'Перелом', correct: false },
                 { text: 'Перелом', correct: false },
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hint : ''
         },
         {
-            image: '9.png',
+            image: '9.jpg',
             answers: [
                 { text: 'Перелом Смита', correct: false },
                 { text: 'Перелом Коллеса', correct: false },
